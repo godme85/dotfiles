@@ -15,6 +15,8 @@ set wildmenu " Busca y muestra una lista de archivos al usar
 command! MakeTags !ctags -R .
 
 " Inserta plantilla html
+" Requiere de un archivo almacenado en la carpeta ~/.vim/
+" Este es una plantilla de html
 nnoremap ,html :-1read $HOME/.vim/.skeleton.html<CR>4jwf>a
 
 " Permite activar la corrección ortográfica

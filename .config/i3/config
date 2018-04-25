@@ -26,7 +26,10 @@ font pango:Noto Sans 10
 # X core fonts rendering does not support right-to-left and this being a bitmap
 # font, it doesn’t scale on retina/hidpi displays.
 
+" Esconder el borde exterior de las ventanas
 hide_edge_borders both
+
+# Configuración de algunos colores
 
 set $bg-color #2f343f
 set $inactive-bg-color	#2f343f
@@ -46,7 +49,10 @@ bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
 # bindsym $mod+d exec --no-startup-id dmenu_run
+
+# Permite la ejecución de rofi en vez de dmenu. Se utiliza la configuracion de colores
 bindsym $mod+d exec rofi -show run -lines 3 -eh 2 -width 100 -padding 320 -opacity "85" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "Noto Sans 18" 
+
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
@@ -194,5 +200,7 @@ bindsym XF86AudioPause exec --no-startup-id playerctl pause
 bindsym XF86AudioNext exec --no-startup-id playerctl next
 bindsym XF86AudioPrev exec --no-startup-id playerctl previous
 
-exec_always feh --bg-scale /home/eduardo/Imágenes/litten_by_limecatmastr-da238ej.png
+# exec_always feh --bg-scale /home/eduardo/Imágenes/litten_by_limecatmastr-da238ej.png
+
+# Permite la visualización de transparencias con 
 exec_always compton

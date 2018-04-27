@@ -132,6 +132,7 @@ bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace $workspace10
 
+# This allows to open a program on a determined workspace (Spotify doesn't seem to work)
 assign [class="Xfce4-terminal"] $workspace1
 assign [class="XTerm"] $workspace1
 assign [class="st-256color"] $workspace1
@@ -181,19 +182,29 @@ bar {
         tray_output primary
 }
 
+# Keybindings for start programs. 
+
 bindsym $mod+F2 exec firefox
+# This is my display manager on i3
 bindsym $mod+F3 exec arandr
+
 bindsym $mod+F4 exec screenkey
 bindsym $mod+Shift+F4 exec killall screenkey
+
+# Ranger is my terminal file manager. It runs on st
 bindsym $mod+F5 exec st ranger
+# Capture video
 bindsym $mod+F6 exec st ffmpeg -y -f x11grab -s 1366x768 -i :0.0 -f pulse -i default salida.mkv
 bindsym $mod+Shift+F6 exec killall ffmpeg
+# My terminal audio/video player
 bindsym $mod+m exec st cvlc --extraintf ncurses ~/Música/
 bindsym $mod+Shift+m exec killall -9 vlc
+# This keybinding allows me to shutdown the system. It only needs my password for proceed.
 bindsym $mod+Shift+p exec st sudo shutdown -h now
 
+# For screenshots
 bindsym Print exec --no-startup-id xfce4-screenshooter
-
+# Lock screen
 bindsym $mod+shift+x exec --no-startup-id i3lock --color "$bg-color"
 
 # Pulse Audio controls
@@ -207,5 +218,7 @@ bindsym XF86AudioPause exec --no-startup-id playerctl pause
 bindsym XF86AudioNext exec --no-startup-id playerctl next
 bindsym XF86AudioPrev exec --no-startup-id playerctl previous
 
+# This allows me to keep my wallpaper everytime that I turn on my PC
 exec_always feh --bg-scale /home/eduardo/Imágenes/litten_by_limecatmastr-da238ej.png
+# Transparency for rofi.
 exec_always compton

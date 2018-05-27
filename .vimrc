@@ -50,6 +50,10 @@ autocmd FileType htm,html inoremap ;img <img src="<++>"><++>
 autocmd FileType htm,html inoremap ;tab <table><CR><++><CR></table>
 autocmd FileType htm,html inoremap ;tr <tr><CR><++><CR></tr>
 autocmd FileType htm,html inoremap ;td <td><++></td>
+autocmd FileType htm,html inoremap ;ol <ol><CR><++><CR></ol>
+autocmd FileType htm,html inoremap ;ul <ul><CR><++><CR></ul>
+autocmd FileType htm,html inoremap ;li <li><++></li>
+
 
 " Formato de LaTeX
 autocmd FileType tex inoremap ;sec \section{<++>}
